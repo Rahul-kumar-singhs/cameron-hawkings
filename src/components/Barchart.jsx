@@ -1,0 +1,37 @@
+import React from 'react'
+import { Bar } from 'react-chartjs-2';
+
+export default function Barchart({ date, value }) {
+    return (
+        <div>
+            <Bar   
+            data={{
+                    labels:date,
+                    datasets: [
+
+                        {
+                            label: 'IPL 2018/2019 Top Run Scorer',
+                            data: value,
+                            backgroundColor: [
+                                "#3cb371",
+                                "#0000FF",
+                                "#9966FF",
+                                "#4C4CFF",
+                                "#00FFFF",
+                                "#f990a7",
+                                "#aad2ed",
+                                "#FF00FF",
+                                "Blue",
+                                "Red"
+                            ]
+                        }
+
+                    ]
+
+                }}
+               
+                options={{ maintainAspectRatio: true }} >
+            </Bar>
+        </div>
+    )
+}
