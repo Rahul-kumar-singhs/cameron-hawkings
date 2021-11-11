@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Barchart from './Barchart';
 import Linechart from './Linechart';
 import Piechart from './Piechart';
+import Areachart from "./Areachart"
 import { Select } from "antd"
 
 export default function ProfitsLoss() {
@@ -23,6 +24,7 @@ export default function ProfitsLoss() {
                             <Select.Option value="1">Line Chart</Select.Option>
                             <Select.Option value="2">Bar Chart</Select.Option>
                             <Select.Option value="3">Pie Chart</Select.Option>
+                            <Select.Option value="4">Area Chart</Select.Option>
                         </Select>
 
                     </h5>
@@ -31,11 +33,14 @@ export default function ProfitsLoss() {
             </div>
 
             <div style={{ height: "600px" }}>
+                
                 {key === "1" && <Linechart date={date} value={value} style={{ height: "100%" }} />}
 
                 {key === "2" && <Barchart date={date} value={value} />}
 
                 {key === "3" && <Piechart date={date} value={value} />}
+
+                {key === "4" && <Areachart date={date} value={value} />}
 
             </div>
 

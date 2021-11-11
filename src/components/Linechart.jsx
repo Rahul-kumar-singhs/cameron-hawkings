@@ -11,7 +11,7 @@ export default function Linechart({date,value}) {
                     datasets: [
 
                         {
-                            label: 'IPL 2018/2019 Top Run Scorer',
+                            label: 'Profit and Loss',
                             data: value,
                             backgroundColor: [
                                 "#3cb371",
