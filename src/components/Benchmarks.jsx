@@ -1,10 +1,12 @@
-import React ,{useState} from 'react'
+import React ,{useState,useEffect} from 'react'
 import { Button, Form, Dropdown, Table } from "react-bootstrap"
 import TableContant from './TableContant'
+import { useSelector } from 'react-redux'
 
 export default function Benchmarks() {
 
 const [expandall, setexpandall] = useState(false)
+const ddd=useSelector((state) => state.countt.value1)
 
 
     const data = {
@@ -118,6 +120,7 @@ const [expandall, setexpandall] = useState(false)
                 <TableContant data={data}  isExpend={expandall}/>
             </div>
 
+            <h1>{"hello " +ddd}</h1>
         </div >
     )
 }

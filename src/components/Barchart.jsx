@@ -1,37 +1,30 @@
 import React from 'react'
-import { Bar } from 'react-chartjs-2';
+import { Chart } from "react-google-charts"
 
-export default function Barchart({ date, value }) {
+export default function Barchart({ data }) {
+
+
     return (
         <div>
-            <Bar   
-            data={{
-                    labels:date,
-                    datasets: [
-
-                        {
-                            label: 'Profit and Loss',
-                            data: value,
-                            backgroundColor: [
-                                "#3cb371",
-                                "#0000FF",
-                                "#9966FF",
-                                "#4C4CFF",
-                                "#00FFFF",
-                                "#f990a7",
-                                "#aad2ed",
-                                "#FF00FF",
-                                "Blue",
-                                "Red"
-                            ]
-                        }
-
-                    ]
-
+            <Chart
+                width={'100%'}
+                height={'50vh'}
+                chartType="BarChart"
+                loader={<div>Loading Chart</div>}
+                data={data}
+                options={{
+                    title: 'Company Performance',
+                    hAxis: { title: 'value', titleTextStyle: { color: '#333' } },
+                    vAxis: { title: 'Year', minValue: 0 },
+                    // For the legend to fit, we make the chart area smaller
+                    chartArea: { width: '50%', height: '70%' },
+                    // lineWidth: 25
                 }}
-               
-                options={{ maintainAspectRatio: true }} >
-            </Bar>
+                // For tests
+                rootProps={{ 'data-testid': '2' }}
+
+            />
+
         </div>
     )
 }
